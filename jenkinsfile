@@ -9,7 +9,7 @@ pipeline {
         stage ('mvn compile'){
             steps{
                 sh '''
-                 cd workspace/maven-pipeline
+                 cd home/ubuntu/workspace/maven-pipeline
                     mvn compile
                     '''
             }
