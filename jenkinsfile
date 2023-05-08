@@ -3,10 +3,13 @@ pipeline {
     stages {
         stage('git clone') {
             steps {
-                git url: 'https://github.com/jaygajera17/E-commerce-project-springBoot.git'
+                sh '''
+                cd /home/ubuntu/workspace/
+                git clone 'https://github.com/jaygajera17/E-commerce-project-springBoot.git'
+            '''
             }
         }
-        stage('mvn compile') {
+        stage('mvn clean/compile') {
             steps {
                 sh '''
                  cd /home/ubuntu/workspace/maven-pipeline/E-mcomerce-project-springBoot/JtProject
