@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('git clone') {
             steps {
-                git url: 'https://github.com/shashirajraja/onlinebookstore.git'
+                git url: 'https://github.com/jaygajera17/E-commerce-project-springBoot.git'
             }
         }
         stage('mvn compile') {
