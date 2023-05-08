@@ -46,5 +46,12 @@ pipeline {
                 '''
             }
         }
+        stage('deploy to tomcat'){
+            stage{
+                sh '''
+                cd /home/ubuntu/
+                sudo scp -o StrictHostKeyChecking=no -i /home/ubuntu/key/key.pem -r $copy ubuntu@172.31.11.73 "bash scopy.sh"
+            }
+        }
     }
 }
