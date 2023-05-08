@@ -14,5 +14,13 @@ pipeline {
                     '''
             }
         }
+        stage('test'){
+            steps{
+                sh'''
+                cd /home/ubuntu/workspace/maven-pipeline
+                mvn test
+                '''
+            }
+        }
     }
 }
