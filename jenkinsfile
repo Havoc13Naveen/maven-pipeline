@@ -30,5 +30,21 @@ pipeline {
                 '''
             }
         }
+        stage('install') {
+            steps {
+                sh'''
+                cd /home/ubuntu/workspace/maven-pipeline
+                mvn install
+                '''
+            }
+        }
+        stage('copy') {
+            steps {
+                sh'''
+                cd /home/ubuntu/
+                bash scopy.sh
+                '''
+            }
+        }
     }
 }
