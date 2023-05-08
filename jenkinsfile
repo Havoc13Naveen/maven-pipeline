@@ -12,7 +12,7 @@ pipeline {
         stage('mvn clean/compile') {
             steps {
                 sh '''
-                 cd /home/ubuntu/workspace/maven-pipeline/E-mcomerce-project-springBoot/JtProject
+                 cd /home/ubuntu/workspace/E-mcomerce-project-springBoot/JtProject
                     mvn clean
                     mvn compile
                     '''
@@ -21,7 +21,7 @@ pipeline {
         stage('test') {
             steps {
                 sh'''
-                cd /home/ubuntu/workspace/maven-pipeline/E-mcomerce-project-springBoot/JtProject
+                cd /home/ubuntu/workspace/E-mcomerce-project-springBoot/JtProject
                 mvn test
                 '''
             }
@@ -29,7 +29,7 @@ pipeline {
         stage('pmd') {
             steps {
                 sh'''
-                cd /home/ubuntu/workspace/maven-pipeline/E-mcomerce-project-springBoot/JtProject
+                cd /home/ubuntu/workspace/E-mcomerce-project-springBoot/JtProject
                 mvn pmd:pmd
                 '''
             }
@@ -37,7 +37,7 @@ pipeline {
         stage('install') {
             steps {
                 sh'''
-                cd /home/ubuntu/workspace/maven-pipeline/E-mcomerce-project-springBoot/JtProject
+                cd /home/ubuntu/workspace/E-mcomerce-project-springBoot/JtProject
                 mvn install
                 '''
             }
