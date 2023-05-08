@@ -1,24 +1,32 @@
 pipeline {
-    agent {label 'node1'}
+    agent { label 'node1' }
     stages {
-        stage ('git clone') {
-            steps{
+        stage('git clone') {
+            steps {
                 git url: 'https://github.com/shashirajraja/onlinebookstore.git'
             }
-        } 
-        stage ('mvn compile'){
-            steps{
+        }
+        stage('mvn compile') {
+            steps {
                 sh '''
                  cd /home/ubuntu/workspace/maven-pipeline
                     mvn compile
                     '''
             }
         }
-        stage('test'){
-            steps{
+        stage('test') {
+            steps {
                 sh'''
                 cd /home/ubuntu/workspace/maven-pipeline
                 mvn test
+                '''
+            }
+        }
+        stage('pmd') {
+            steps {
+                sh'''
+                cd /home/ubuntu/workspace/maven-pipeline
+                mvn pmd:pmd
                 '''
             }
         }
