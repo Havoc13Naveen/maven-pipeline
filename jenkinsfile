@@ -1,10 +1,17 @@
 pipeline {
-    agent none
+    agent node1
     stages {
         stage ('git clone') {
-            agent { label 'node1'}
             steps{
                 git url: 'https://github.com/shashirajraja/onlinebookstore.git'
+            }
+        } 
+        stage ('mvn compile'){
+            steps{
+                sh '''
+                 cd workspace/maven-pipeline
+                    mvn compile
+                    '''
             }
         }
     }
