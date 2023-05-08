@@ -10,6 +10,7 @@ pipeline {
             steps {
                 sh '''
                  cd /home/ubuntu/workspace/maven-pipeline
+                    mvn clean
                     mvn compile
                     '''
             }
