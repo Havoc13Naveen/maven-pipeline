@@ -4,7 +4,7 @@ pipeline {
         stage ('git clone') {
             agent { label 'node1'}
             steps{
-                git url: 'https://github.com/Havoc13Naveen/maven-pipeline.githttps://github.com/shashirajraja/onlinebookstore.git'
+                git url: 'https://github.com/shashirajraja/onlinebookstore.git'
             }
         }
     }
